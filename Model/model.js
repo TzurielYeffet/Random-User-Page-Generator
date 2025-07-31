@@ -62,7 +62,7 @@ async function getPokemon() {
 
     const newPokemon = new Pokemon(
         pokemon.species.name,
-        pokemon.species.url
+        pokemon.sprites.front_default
     )
     return newPokemon;
 }
