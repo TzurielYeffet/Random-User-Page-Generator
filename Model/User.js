@@ -7,12 +7,13 @@ export default class User {
     #favoritePokemon;
     #friends;
 
-    constructor({ firstName, lastName, address, photo, quote, favoritePokemon,impsumText, friends = [] }) {
+    constructor(firstName, lastName, address, photo, quote, favoritePokemon,impsumText, friends = [] ) {
         this.#firstName = firstName;
         this.#lastName = lastName;
         this.#address = address;
         this.#photo = photo;
         this.#quote = quote;
+        
         this.#favoritePokemon = favoritePokemon;
         this.impsumText =impsumText;
         this.#friends = friends;
@@ -31,9 +32,8 @@ export default class User {
     }
 
     getQuote() {
-        return this.#quote;
-    }
-    getQuote() {
+        console.log(`this.#quote  ${this.#quote }`);
+
         return this.#quote;
     }
 

@@ -1,6 +1,6 @@
-import {randomUserAPI,randomKanyeQuotesAPI,randomPokemonAPI,baconIpsumAOI} from './apiEndpoints'
-import User from './User';
-import Pokemon from './Pokemon';
+import {randomUserAPI,randomKanyeQuotesAPI,randomPokemonAPI,baconIpsumAOI} from '../Model/apiEndpoints.js'
+import User from './User.js';
+import Pokemon from './Pokemon.js';
 async function getAPIData(api) {
 
     const res = await fetch(api);
@@ -13,34 +13,35 @@ async function getAPIData(api) {
         return data;   
 }
 
-async function getUsers(){
+export async function getUsers(){
     const data = await getAPIData(randomUserAPI);
     if(!data){
         console.log("There was a problem fetching user data from API");
         return
     }
     
+    console.log(data.results);
+    
     const userArr = generateUsers(data.results)
+    return userArr;
 
 }
 
-function generateUsers(userData) {
+async function generateUsers(userData) {
     let userArr = [];
-    let userQuote = getQuote()
-    let favoritePokemon = getPokemon()
-    let impsum = getImpsum()
+    const [userQuote,favoritePokemon,impsum] = await Promise.all([getQuote(),getPokemon(),getImpsum()]);
     userData.forEach(user=>{
-        let user = new User(
+        let newUser = new User(
             user.name.first,
             user.name.last,
             user.location.street.name + " " + user.location.city,
             user.picture.medium,
-            userQuote,
+            userQuote.quote,
             favoritePokemon,
             impsum
 
         )
-        userArr.push(user)
+        userArr.push(newUser)
     })
     return userArr;   
 }
