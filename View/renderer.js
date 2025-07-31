@@ -2,7 +2,11 @@ export default class Renderer {
   constructor() {}
 
   renderUser(user) {
+<<<<<<< HEAD
     let pokemon = user.getFavoritePokemon();
+=======
+    let pokemon = user.getFavoritePokemon()
+>>>>>>> 6e5ce070e0d54d1c8f5a92dd2d2f789e2a1bd3b8
     $(`.profile-container .profile-picture`).html(
       `<img src="${user.getPhoto()}" alt="profile-picture">`
     );
@@ -15,11 +19,17 @@ export default class Renderer {
     );
     $(`.about-me .bacon-impsum`).text(user.impsumText);
 
+<<<<<<< HEAD
     const $friendsList = $(`.friends-section .friends-list`);
     $friendsList.empty();
     user.getFriends().forEach((friend) => {
       $(`.friends-section .friends-list`).append(
         `<li>${friend.getFullName()}</li>`
+=======
+    user.friends.forEach((friend) => {
+      $(`.friends-section .friends-list`).append(
+        `<li>${friend.firstName}</li>`
+>>>>>>> 6e5ce070e0d54d1c8f5a92dd2d2f789e2a1bd3b8
       );
     });
   }
