@@ -6,10 +6,11 @@ export default class Pokemon{
         this.#pokemonImage = pokemonImage;
     }
 
-    getpokemonName(){
+    getPokemonName(){
         return this.#pokemonName;
+
     }
-    getpokemonImage(){
+    getPokemonImage(){
         return this.#pokemonImage;
     }
 
