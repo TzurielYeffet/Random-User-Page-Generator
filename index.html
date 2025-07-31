@@ -4,34 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random User Name Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="profile-container">
+      <div class="profile-picture"></div>
       <div class="profile-info">
-        <div class="profile-picture"></div>
         <div class="username"></div>
         <div class="address"></div>
       </div>
-
-      <div class="friends-section">
-        <ul class="friends-list"></ul>
+      <div class="btn-container">
+        <div class="generate-user">
+          <button class="btn">Generate User</button>
+        </div>
       </div>
+    </div>
+    <div class="container">
       <div class="middle-container">
-        <div class="favorite-quote"></div>
+        <div class="favorite-quote">
+          <div class="title">Favorite qoute</div>
+          <div class="quote"></div>
+          <div class="quote-by">- K.West</div>
+        </div>
+
         <div class="favorite-pokemon">
           <div class="pokemon-name"></div>
           <div class="pokemon-image"></div>
         </div>
       </div>
-      <div class="about-me">
-        <div class="About-me-text">About me</div>
-        <div class="bacon-impsum"></div>
+      <div class="friends-section">
+        <div class="friends-title">Friends</div>
+        <ul class="friends-list"></ul>
       </div>
-
-      <div class="generate-user">
-        <button class="btn">Generate User</button>
-      </div>
+    </div>
+    <div class="about-me">
+      <div class="about-me-text">About me</div>
+      <div class="bacon-impsum"></div>
     </div>
 
     <script type="module" src="./Controller/main.js"></script>
